@@ -1,0 +1,513 @@
+Analysis & Synthesis report for build_04
+Sun Apr 06 20:57:02 2014
+Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. State Machine - |build04|prev_state
+  9. State Machine - |build04|nowstate
+ 10. State Machine - |build04|next_state
+ 11. State Machine - |build04|state
+ 12. Registers Removed During Synthesis
+ 13. Removed Registers Triggering Further Register Optimizations
+ 14. General Register Statistics
+ 15. Inverted Register Statistics
+ 16. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 17. Elapsed Time Per Partition
+ 18. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++--------------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                         ;
++------------------------------------+-------------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Sun Apr 06 20:57:02 2014           ;
+; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
+; Revision Name                      ; build_04                                        ;
+; Top-level Entity Name              ; build04                                         ;
+; Family                             ; Cyclone II                                      ;
+; Total logic elements               ; 799                                             ;
+;     Total combinational functions  ; 796                                             ;
+;     Dedicated logic registers      ; 169                                             ;
+; Total registers                    ; 169                                             ;
+; Total pins                         ; 52                                              ;
+; Total virtual pins                 ; 0                                               ;
+; Total memory bits                  ; 0                                               ;
+; Embedded Multiplier 9-bit elements ; 0                                               ;
+; Total PLLs                         ; 0                                               ;
++------------------------------------+-------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                        ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                     ; Setting            ; Default Value      ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                     ; EP2C35F672C6       ;                    ;
+; Top-level entity name                                                      ; build04            ; build_04           ;
+; Family name                                                                ; Cyclone II         ; Cyclone IV GX      ;
+; VHDL Show LMF Mapping Messages                                             ; Off                ;                    ;
+; VHDL Version                                                               ; VHDL_2008          ; VHDL_1993          ;
+; Use smart compilation                                                      ; Off                ; Off                ;
+; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                                ; Off                ; Off                ;
+; Restructure Multiplexers                                                   ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                                        ; Off                ; Off                ;
+; Preserve fewer node names                                                  ; On                 ; On                 ;
+; Disable OpenCore Plus hardware evaluation                                  ; Off                ; Off                ;
+; Verilog Version                                                            ; Verilog_2001       ; Verilog_2001       ;
+; State Machine Processing                                                   ; Auto               ; Auto               ;
+; Safe State Machine                                                         ; Off                ; Off                ;
+; Extract Verilog State Machines                                             ; On                 ; On                 ;
+; Extract VHDL State Machines                                                ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                          ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                 ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                             ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                    ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                                  ; On                 ; On                 ;
+; Parallel Synthesis                                                         ; On                 ; On                 ;
+; DSP Block Balancing                                                        ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                         ; On                 ; On                 ;
+; Power-Up Don't Care                                                        ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                               ; Off                ; Off                ;
+; Remove Duplicate Registers                                                 ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                       ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                     ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                      ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                  ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                       ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                        ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                             ; Off                ; Off                ;
+; Optimization Technique                                                     ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                         ; 70                 ; 70                 ;
+; Auto Carry Chains                                                          ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                       ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                      ; Off                ; Off                ;
+; Auto ROM Replacement                                                       ; On                 ; On                 ;
+; Auto RAM Replacement                                                       ; On                 ; On                 ;
+; Auto Shift Register Replacement                                            ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                            ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                              ; On                 ; On                 ;
+; Strict RAM Replacement                                                     ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                          ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                     ; Off                ; Off                ;
+; Auto RAM to Logic Cell Conversion                                          ; Off                ; Off                ;
+; Auto Resource Sharing                                                      ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                              ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                        ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                          ; Off                ; Off                ;
+; Timing-Driven Synthesis                                                    ; Off                ; Off                ;
+; Report Parameter Settings                                                  ; On                 ; On                 ;
+; Report Source Assignments                                                  ; On                 ; On                 ;
+; Report Connectivity Checks                                                 ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                         ; Off                ; Off                ;
+; Synchronization Register Chain Length                                      ; 2                  ; 2                  ;
+; PowerPlay Power Optimization                                               ; Normal compilation ; Normal compilation ;
+; HDL message level                                                          ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                            ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                   ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                         ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                  ; 100                ; 100                ;
+; Clock MUX Protection                                                       ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                                ; Off                ; Off                ;
+; Block Design Naming                                                        ; Auto               ; Auto               ;
+; SDC constraint protection                                                  ; Off                ; Off                ;
+; Synthesis Effort                                                           ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal               ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                                       ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                                         ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                                     ; On                 ; On                 ;
+; Synthesis Seed                                                             ; 1                  ; 1                  ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+
+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 8      ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                  ;
++----------------------------------+-----------------+-----------------+----------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                                           ; Library ;
++----------------------------------+-----------------+-----------------+----------------------------------------------------------------------------------------+---------+
+; build_04.vhd                     ; yes             ; User VHDL File  ; C:/Users/Joe/Documents/IUPUI Spring 2014/ECET 155/Final Project/build0014/build_04.vhd ;         ;
++----------------------------------+-----------------+-----------------+----------------------------------------------------------------------------------------+---------+
+
+
++-----------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary               ;
++---------------------------------------------+-------------+
+; Resource                                    ; Usage       ;
++---------------------------------------------+-------------+
+; Estimated Total logic elements              ; 799         ;
+;                                             ;             ;
+; Total combinational functions               ; 796         ;
+; Logic element usage by number of LUT inputs ;             ;
+;     -- 4 input functions                    ; 545         ;
+;     -- 3 input functions                    ; 117         ;
+;     -- <=2 input functions                  ; 134         ;
+;                                             ;             ;
+; Logic elements by mode                      ;             ;
+;     -- normal mode                          ; 692         ;
+;     -- arithmetic mode                      ; 104         ;
+;                                             ;             ;
+; Total registers                             ; 169         ;
+;     -- Dedicated logic registers            ; 169         ;
+;     -- I/O registers                        ; 0           ;
+;                                             ;             ;
+; I/O pins                                    ; 52          ;
+; Embedded Multiplier 9-bit elements          ; 0           ;
+; Maximum fan-out node                        ; memstate[0] ;
+; Maximum fan-out                             ; 149         ;
+; Total fan-out                               ; 3344        ;
+; Average fan-out                             ; 3.29        ;
++---------------------------------------------+-------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                         ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------+
+; Compilation Hierarchy Node ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name ; Library Name ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------+
+; |build04                   ; 796 (796)         ; 169 (169)    ; 0           ; 0            ; 0       ; 0         ; 52   ; 0            ; |build04            ; work         ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
+Encoding Type:  One-Hot
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |build04|prev_state                                                                                                                                                                                                                                                                                                                                                                            ;
++-------------------------+---------------------+--------------------+-----------------------+--------------------+---------------------+-------------------+-------------------------+------------------------+-------------------+------------------------+-----------------+-----------------------+------------------+---------------------+----------------+------------------------+-----------------------+
+; Name                    ; prev_state.newstate ; prev_state.testing ; prev_state.processing ; prev_state.endgame ; prev_state.testing2 ; prev_state.ingame ; prev_state.startscreens ; prev_state.infoscreens ; prev_state.e_drop ; prev_state.homescreens ; prev_state.hold ; prev_state.print_disp ; prev_state.line2 ; prev_state.curstate ; prev_state.RIP ; prev_state.return_home ; prev_state.initialize ;
++-------------------------+---------------------+--------------------+-----------------------+--------------------+---------------------+-------------------+-------------------------+------------------------+-------------------+------------------------+-----------------+-----------------------+------------------+---------------------+----------------+------------------------+-----------------------+
+; prev_state.initialize   ; 0                   ; 0                  ; 0                     ; 0                  ; 0                   ; 0                 ; 0                       ; 0                      ; 0                 ; 0                      ; 0               ; 0                     ; 0                ; 0                   ; 0              ; 0                      ; 0                     ;
+; prev_state.return_home  ; 0                   ; 0                  ; 0                     ; 0                  ; 0                   ; 0                 ; 0                       ; 0                      ; 0                 ; 0                      ; 0               ; 0                     ; 0                ; 0                   ; 0              ; 1                      ; 1                     ;
+; prev_state.RIP          ; 0                   ; 0                  ; 0                     ; 0                  ; 0                   ; 0                 ; 0                       ; 0                      ; 0                 ; 0                      ; 0               ; 0                     ; 0                ; 0                   ; 1              ; 0                      ; 1                     ;
+; prev_state.curstate     ; 0                   ; 0                  ; 0                     ; 0                  ; 0                   ; 0                 ; 0                       ; 0                      ; 0                 ; 0                      ; 0               ; 0                     ; 0                ; 1                   ; 0              ; 0                      ; 1                     ;
+; prev_state.line2        ; 0                   ; 0                  ; 0                     ; 0                  ; 0                   ; 0                 ; 0                       ; 0                      ; 0                 ; 0                      ; 0               ; 0                     ; 1                ; 0                   ; 0              ; 0                      ; 1                     ;
+; prev_state.print_disp   ; 0                   ; 0                  ; 0                     ; 0                  ; 0                   ; 0                 ; 0                       ; 0                      ; 0                 ; 0                      ; 0               ; 1                     ; 0                ; 0                   ; 0              ; 0                      ; 1                     ;
+; prev_state.hold         ; 0                   ; 0                  ; 0                     ; 0                  ; 0                   ; 0                 ; 0                       ; 0                      ; 0                 ; 0                      ; 1               ; 0                     ; 0                ; 0                   ; 0              ; 0                      ; 1                     ;
+; prev_state.homescreens  ; 0                   ; 0                  ; 0                     ; 0                  ; 0                   ; 0                 ; 0                       ; 0                      ; 0                 ; 1                      ; 0               ; 0                     ; 0                ; 0                   ; 0              ; 0                      ; 1                     ;
+; prev_state.e_drop       ; 0                   ; 0                  ; 0                     ; 0                  ; 0                   ; 0                 ; 0                       ; 0                      ; 1                 ; 0                      ; 0               ; 0                     ; 0                ; 0                   ; 0              ; 0                      ; 1                     ;
+; prev_state.infoscreens  ; 0                   ; 0                  ; 0                     ; 0                  ; 0                   ; 0                 ; 0                       ; 1                      ; 0                 ; 0                      ; 0               ; 0                     ; 0                ; 0                   ; 0              ; 0                      ; 1                     ;
+; prev_state.startscreens ; 0                   ; 0                  ; 0                     ; 0                  ; 0                   ; 0                 ; 1                       ; 0                      ; 0                 ; 0                      ; 0               ; 0                     ; 0                ; 0                   ; 0              ; 0                      ; 1                     ;
+; prev_state.ingame       ; 0                   ; 0                  ; 0                     ; 0                  ; 0                   ; 1                 ; 0                       ; 0                      ; 0                 ; 0                      ; 0               ; 0                     ; 0                ; 0                   ; 0              ; 0                      ; 1                     ;
+; prev_state.testing2     ; 0                   ; 0                  ; 0                     ; 0                  ; 1                   ; 0                 ; 0                       ; 0                      ; 0                 ; 0                      ; 0               ; 0                     ; 0                ; 0                   ; 0              ; 0                      ; 1                     ;
+; prev_state.endgame      ; 0                   ; 0                  ; 0                     ; 1                  ; 0                   ; 0                 ; 0                       ; 0                      ; 0                 ; 0                      ; 0               ; 0                     ; 0                ; 0                   ; 0              ; 0                      ; 1                     ;
+; prev_state.processing   ; 0                   ; 0                  ; 1                     ; 0                  ; 0                   ; 0                 ; 0                       ; 0                      ; 0                 ; 0                      ; 0               ; 0                     ; 0                ; 0                   ; 0              ; 0                      ; 1                     ;
+; prev_state.testing      ; 0                   ; 1                  ; 0                     ; 0                  ; 0                   ; 0                 ; 0                       ; 0                      ; 0                 ; 0                      ; 0               ; 0                     ; 0                ; 0                   ; 0              ; 0                      ; 1                     ;
+; prev_state.newstate     ; 1                   ; 0                  ; 0                     ; 0                  ; 0                   ; 0                 ; 0                       ; 0                      ; 0                 ; 0                      ; 0               ; 0                     ; 0                ; 0                   ; 0              ; 0                      ; 1                     ;
++-------------------------+---------------------+--------------------+-----------------------+--------------------+---------------------+-------------------+-------------------------+------------------------+-------------------+------------------------+-----------------+-----------------------+------------------+---------------------+----------------+------------------------+-----------------------+
+
+
+Encoding Type:  One-Hot
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |build04|nowstate                                                                                                                                                                                                                                                                                                                                          ;
++-----------------------+-------------------+------------------+---------------------+------------------+-------------------+-----------------+-----------------------+----------------------+-----------------+----------------------+---------------+---------------------+----------------+-------------------+--------------+----------------------+---------------------+
+; Name                  ; nowstate.newstate ; nowstate.testing ; nowstate.processing ; nowstate.endgame ; nowstate.testing2 ; nowstate.ingame ; nowstate.startscreens ; nowstate.infoscreens ; nowstate.e_drop ; nowstate.homescreens ; nowstate.hold ; nowstate.print_disp ; nowstate.line2 ; nowstate.curstate ; nowstate.RIP ; nowstate.return_home ; nowstate.initialize ;
++-----------------------+-------------------+------------------+---------------------+------------------+-------------------+-----------------+-----------------------+----------------------+-----------------+----------------------+---------------+---------------------+----------------+-------------------+--------------+----------------------+---------------------+
+; nowstate.initialize   ; 0                 ; 0                ; 0                   ; 0                ; 0                 ; 0               ; 0                     ; 0                    ; 0               ; 0                    ; 0             ; 0                   ; 0              ; 0                 ; 0            ; 0                    ; 0                   ;
+; nowstate.return_home  ; 0                 ; 0                ; 0                   ; 0                ; 0                 ; 0               ; 0                     ; 0                    ; 0               ; 0                    ; 0             ; 0                   ; 0              ; 0                 ; 0            ; 1                    ; 1                   ;
+; nowstate.RIP          ; 0                 ; 0                ; 0                   ; 0                ; 0                 ; 0               ; 0                     ; 0                    ; 0               ; 0                    ; 0             ; 0                   ; 0              ; 0                 ; 1            ; 0                    ; 1                   ;
+; nowstate.curstate     ; 0                 ; 0                ; 0                   ; 0                ; 0                 ; 0               ; 0                     ; 0                    ; 0               ; 0                    ; 0             ; 0                   ; 0              ; 1                 ; 0            ; 0                    ; 1                   ;
+; nowstate.line2        ; 0                 ; 0                ; 0                   ; 0                ; 0                 ; 0               ; 0                     ; 0                    ; 0               ; 0                    ; 0             ; 0                   ; 1              ; 0                 ; 0            ; 0                    ; 1                   ;
+; nowstate.print_disp   ; 0                 ; 0                ; 0                   ; 0                ; 0                 ; 0               ; 0                     ; 0                    ; 0               ; 0                    ; 0             ; 1                   ; 0              ; 0                 ; 0            ; 0                    ; 1                   ;
+; nowstate.hold         ; 0                 ; 0                ; 0                   ; 0                ; 0                 ; 0               ; 0                     ; 0                    ; 0               ; 0                    ; 1             ; 0                   ; 0              ; 0                 ; 0            ; 0                    ; 1                   ;
+; nowstate.homescreens  ; 0                 ; 0                ; 0                   ; 0                ; 0                 ; 0               ; 0                     ; 0                    ; 0               ; 1                    ; 0             ; 0                   ; 0              ; 0                 ; 0            ; 0                    ; 1                   ;
+; nowstate.e_drop       ; 0                 ; 0                ; 0                   ; 0                ; 0                 ; 0               ; 0                     ; 0                    ; 1               ; 0                    ; 0             ; 0                   ; 0              ; 0                 ; 0            ; 0                    ; 1                   ;
+; nowstate.infoscreens  ; 0                 ; 0                ; 0                   ; 0                ; 0                 ; 0               ; 0                     ; 1                    ; 0               ; 0                    ; 0             ; 0                   ; 0              ; 0                 ; 0            ; 0                    ; 1                   ;
+; nowstate.startscreens ; 0                 ; 0                ; 0                   ; 0                ; 0                 ; 0               ; 1                     ; 0                    ; 0               ; 0                    ; 0             ; 0                   ; 0              ; 0                 ; 0            ; 0                    ; 1                   ;
+; nowstate.ingame       ; 0                 ; 0                ; 0                   ; 0                ; 0                 ; 1               ; 0                     ; 0                    ; 0               ; 0                    ; 0             ; 0                   ; 0              ; 0                 ; 0            ; 0                    ; 1                   ;
+; nowstate.testing2     ; 0                 ; 0                ; 0                   ; 0                ; 1                 ; 0               ; 0                     ; 0                    ; 0               ; 0                    ; 0             ; 0                   ; 0              ; 0                 ; 0            ; 0                    ; 1                   ;
+; nowstate.endgame      ; 0                 ; 0                ; 0                   ; 1                ; 0                 ; 0               ; 0                     ; 0                    ; 0               ; 0                    ; 0             ; 0                   ; 0              ; 0                 ; 0            ; 0                    ; 1                   ;
+; nowstate.processing   ; 0                 ; 0                ; 1                   ; 0                ; 0                 ; 0               ; 0                     ; 0                    ; 0               ; 0                    ; 0             ; 0                   ; 0              ; 0                 ; 0            ; 0                    ; 1                   ;
+; nowstate.testing      ; 0                 ; 1                ; 0                   ; 0                ; 0                 ; 0               ; 0                     ; 0                    ; 0               ; 0                    ; 0             ; 0                   ; 0              ; 0                 ; 0            ; 0                    ; 1                   ;
+; nowstate.newstate     ; 1                 ; 0                ; 0                   ; 0                ; 0                 ; 0               ; 0                     ; 0                    ; 0               ; 0                    ; 0             ; 0                   ; 0              ; 0                 ; 0            ; 0                    ; 1                   ;
++-----------------------+-------------------+------------------+---------------------+------------------+-------------------+-----------------+-----------------------+----------------------+-----------------+----------------------+---------------+---------------------+----------------+-------------------+--------------+----------------------+---------------------+
+
+
+Encoding Type:  One-Hot
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |build04|next_state                                                                                                                                                                                                                                                                                                                                                                            ;
++-------------------------+---------------------+--------------------+-----------------------+--------------------+---------------------+-------------------+-------------------------+------------------------+-------------------+------------------------+-----------------+-----------------------+------------------+---------------------+----------------+------------------------+-----------------------+
+; Name                    ; next_state.newstate ; next_state.testing ; next_state.processing ; next_state.endgame ; next_state.testing2 ; next_state.ingame ; next_state.startscreens ; next_state.infoscreens ; next_state.e_drop ; next_state.homescreens ; next_state.hold ; next_state.print_disp ; next_state.line2 ; next_state.curstate ; next_state.RIP ; next_state.return_home ; next_state.initialize ;
++-------------------------+---------------------+--------------------+-----------------------+--------------------+---------------------+-------------------+-------------------------+------------------------+-------------------+------------------------+-----------------+-----------------------+------------------+---------------------+----------------+------------------------+-----------------------+
+; next_state.initialize   ; 0                   ; 0                  ; 0                     ; 0                  ; 0                   ; 0                 ; 0                       ; 0                      ; 0                 ; 0                      ; 0               ; 0                     ; 0                ; 0                   ; 0              ; 0                      ; 0                     ;
+; next_state.return_home  ; 0                   ; 0                  ; 0                     ; 0                  ; 0                   ; 0                 ; 0                       ; 0                      ; 0                 ; 0                      ; 0               ; 0                     ; 0                ; 0                   ; 0              ; 1                      ; 1                     ;
+; next_state.RIP          ; 0                   ; 0                  ; 0                     ; 0                  ; 0                   ; 0                 ; 0                       ; 0                      ; 0                 ; 0                      ; 0               ; 0                     ; 0                ; 0                   ; 1              ; 0                      ; 1                     ;
+; next_state.curstate     ; 0                   ; 0                  ; 0                     ; 0                  ; 0                   ; 0                 ; 0                       ; 0                      ; 0                 ; 0                      ; 0               ; 0                     ; 0                ; 1                   ; 0              ; 0                      ; 1                     ;
+; next_state.line2        ; 0                   ; 0                  ; 0                     ; 0                  ; 0                   ; 0                 ; 0                       ; 0                      ; 0                 ; 0                      ; 0               ; 0                     ; 1                ; 0                   ; 0              ; 0                      ; 1                     ;
+; next_state.print_disp   ; 0                   ; 0                  ; 0                     ; 0                  ; 0                   ; 0                 ; 0                       ; 0                      ; 0                 ; 0                      ; 0               ; 1                     ; 0                ; 0                   ; 0              ; 0                      ; 1                     ;
+; next_state.hold         ; 0                   ; 0                  ; 0                     ; 0                  ; 0                   ; 0                 ; 0                       ; 0                      ; 0                 ; 0                      ; 1               ; 0                     ; 0                ; 0                   ; 0              ; 0                      ; 1                     ;
+; next_state.homescreens  ; 0                   ; 0                  ; 0                     ; 0                  ; 0                   ; 0                 ; 0                       ; 0                      ; 0                 ; 1                      ; 0               ; 0                     ; 0                ; 0                   ; 0              ; 0                      ; 1                     ;
+; next_state.e_drop       ; 0                   ; 0                  ; 0                     ; 0                  ; 0                   ; 0                 ; 0                       ; 0                      ; 1                 ; 0                      ; 0               ; 0                     ; 0                ; 0                   ; 0              ; 0                      ; 1                     ;
+; next_state.infoscreens  ; 0                   ; 0                  ; 0                     ; 0                  ; 0                   ; 0                 ; 0                       ; 1                      ; 0                 ; 0                      ; 0               ; 0                     ; 0                ; 0                   ; 0              ; 0                      ; 1                     ;
+; next_state.startscreens ; 0                   ; 0                  ; 0                     ; 0                  ; 0                   ; 0                 ; 1                       ; 0                      ; 0                 ; 0                      ; 0               ; 0                     ; 0                ; 0                   ; 0              ; 0                      ; 1                     ;
+; next_state.ingame       ; 0                   ; 0                  ; 0                     ; 0                  ; 0                   ; 1                 ; 0                       ; 0                      ; 0                 ; 0                      ; 0               ; 0                     ; 0                ; 0                   ; 0              ; 0                      ; 1                     ;
+; next_state.testing2     ; 0                   ; 0                  ; 0                     ; 0                  ; 1                   ; 0                 ; 0                       ; 0                      ; 0                 ; 0                      ; 0               ; 0                     ; 0                ; 0                   ; 0              ; 0                      ; 1                     ;
+; next_state.endgame      ; 0                   ; 0                  ; 0                     ; 1                  ; 0                   ; 0                 ; 0                       ; 0                      ; 0                 ; 0                      ; 0               ; 0                     ; 0                ; 0                   ; 0              ; 0                      ; 1                     ;
+; next_state.processing   ; 0                   ; 0                  ; 1                     ; 0                  ; 0                   ; 0                 ; 0                       ; 0                      ; 0                 ; 0                      ; 0               ; 0                     ; 0                ; 0                   ; 0              ; 0                      ; 1                     ;
+; next_state.testing      ; 0                   ; 1                  ; 0                     ; 0                  ; 0                   ; 0                 ; 0                       ; 0                      ; 0                 ; 0                      ; 0               ; 0                     ; 0                ; 0                   ; 0              ; 0                      ; 1                     ;
+; next_state.newstate     ; 1                   ; 0                  ; 0                     ; 0                  ; 0                   ; 0                 ; 0                       ; 0                      ; 0                 ; 0                      ; 0               ; 0                     ; 0                ; 0                   ; 0              ; 0                      ; 1                     ;
++-------------------------+---------------------+--------------------+-----------------------+--------------------+---------------------+-------------------+-------------------------+------------------------+-------------------+------------------------+-----------------+-----------------------+------------------+---------------------+----------------+------------------------+-----------------------+
+
+
+Encoding Type:  One-Hot
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |build04|state                                                                                                                                                                                                                                                                                       ;
++--------------------+----------------+---------------+------------------+---------------+----------------+--------------+--------------------+-------------------+--------------+-------------------+------------+------------------+-------------+----------------+-----------+-------------------+------------------+
+; Name               ; state.newstate ; state.testing ; state.processing ; state.endgame ; state.testing2 ; state.ingame ; state.startscreens ; state.infoscreens ; state.e_drop ; state.homescreens ; state.hold ; state.print_disp ; state.line2 ; state.curstate ; state.RIP ; state.return_home ; state.initialize ;
++--------------------+----------------+---------------+------------------+---------------+----------------+--------------+--------------------+-------------------+--------------+-------------------+------------+------------------+-------------+----------------+-----------+-------------------+------------------+
+; state.initialize   ; 0              ; 0             ; 0                ; 0             ; 0              ; 0            ; 0                  ; 0                 ; 0            ; 0                 ; 0          ; 0                ; 0           ; 0              ; 0         ; 0                 ; 0                ;
+; state.return_home  ; 0              ; 0             ; 0                ; 0             ; 0              ; 0            ; 0                  ; 0                 ; 0            ; 0                 ; 0          ; 0                ; 0           ; 0              ; 0         ; 1                 ; 1                ;
+; state.RIP          ; 0              ; 0             ; 0                ; 0             ; 0              ; 0            ; 0                  ; 0                 ; 0            ; 0                 ; 0          ; 0                ; 0           ; 0              ; 1         ; 0                 ; 1                ;
+; state.curstate     ; 0              ; 0             ; 0                ; 0             ; 0              ; 0            ; 0                  ; 0                 ; 0            ; 0                 ; 0          ; 0                ; 0           ; 1              ; 0         ; 0                 ; 1                ;
+; state.line2        ; 0              ; 0             ; 0                ; 0             ; 0              ; 0            ; 0                  ; 0                 ; 0            ; 0                 ; 0          ; 0                ; 1           ; 0              ; 0         ; 0                 ; 1                ;
+; state.print_disp   ; 0              ; 0             ; 0                ; 0             ; 0              ; 0            ; 0                  ; 0                 ; 0            ; 0                 ; 0          ; 1                ; 0           ; 0              ; 0         ; 0                 ; 1                ;
+; state.hold         ; 0              ; 0             ; 0                ; 0             ; 0              ; 0            ; 0                  ; 0                 ; 0            ; 0                 ; 1          ; 0                ; 0           ; 0              ; 0         ; 0                 ; 1                ;
+; state.homescreens  ; 0              ; 0             ; 0                ; 0             ; 0              ; 0            ; 0                  ; 0                 ; 0            ; 1                 ; 0          ; 0                ; 0           ; 0              ; 0         ; 0                 ; 1                ;
+; state.e_drop       ; 0              ; 0             ; 0                ; 0             ; 0              ; 0            ; 0                  ; 0                 ; 1            ; 0                 ; 0          ; 0                ; 0           ; 0              ; 0         ; 0                 ; 1                ;
+; state.infoscreens  ; 0              ; 0             ; 0                ; 0             ; 0              ; 0            ; 0                  ; 1                 ; 0            ; 0                 ; 0          ; 0                ; 0           ; 0              ; 0         ; 0                 ; 1                ;
+; state.startscreens ; 0              ; 0             ; 0                ; 0             ; 0              ; 0            ; 1                  ; 0                 ; 0            ; 0                 ; 0          ; 0                ; 0           ; 0              ; 0         ; 0                 ; 1                ;
+; state.ingame       ; 0              ; 0             ; 0                ; 0             ; 0              ; 1            ; 0                  ; 0                 ; 0            ; 0                 ; 0          ; 0                ; 0           ; 0              ; 0         ; 0                 ; 1                ;
+; state.testing2     ; 0              ; 0             ; 0                ; 0             ; 1              ; 0            ; 0                  ; 0                 ; 0            ; 0                 ; 0          ; 0                ; 0           ; 0              ; 0         ; 0                 ; 1                ;
+; state.endgame      ; 0              ; 0             ; 0                ; 1             ; 0              ; 0            ; 0                  ; 0                 ; 0            ; 0                 ; 0          ; 0                ; 0           ; 0              ; 0         ; 0                 ; 1                ;
+; state.processing   ; 0              ; 0             ; 1                ; 0             ; 0              ; 0            ; 0                  ; 0                 ; 0            ; 0                 ; 0          ; 0                ; 0           ; 0              ; 0         ; 0                 ; 1                ;
+; state.testing      ; 0              ; 1             ; 0                ; 0             ; 0              ; 0            ; 0                  ; 0                 ; 0            ; 0                 ; 0          ; 0                ; 0           ; 0              ; 0         ; 0                 ; 1                ;
+; state.newstate     ; 1              ; 0             ; 0                ; 0             ; 0              ; 0            ; 0                  ; 0                 ; 0            ; 0                 ; 0          ; 0                ; 0           ; 0              ; 0         ; 0                 ; 1                ;
++--------------------+----------------+---------------+------------------+---------------+----------------+--------------+--------------------+-------------------+--------------+-------------------+------------+------------------+-------------+----------------+-----------+-------------------+------------------+
+
+
++----------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                               ;
++-----------------------------------------+----------------------------------------+
+; Register name                           ; Reason for Removal                     ;
++-----------------------------------------+----------------------------------------+
+; aggOP[0..15]                            ; Stuck at GND due to stuck port data_in ;
+; OP2[0]~reg0                             ; Stuck at GND due to stuck port data_in ;
+; OP2[1]~reg0                             ; Stuck at GND due to stuck port data_in ;
+; OP2[2]~reg0                             ; Stuck at GND due to stuck port data_in ;
+; OP2[3]~reg0                             ; Stuck at GND due to stuck port data_in ;
+; OP2[4]~reg0                             ; Stuck at GND due to stuck port data_in ;
+; OP2[5]~reg0                             ; Stuck at GND due to stuck port data_in ;
+; OP2[6]~reg0                             ; Stuck at GND due to stuck port data_in ;
+; OP2[7]~reg0                             ; Stuck at GND due to stuck port data_in ;
+; reset_e[2..31]                          ; Merged with reset_e[1]                 ;
+; memstate[4..9,11..15]                   ; Merged with memstate[10]               ;
+; state_localstate[5..9,11..31]           ; Merged with state_localstate[10]       ;
+; print_localstate[2..9,11..31]           ; Merged with print_localstate[10]       ;
+; reset_e[1]                              ; Stuck at GND due to stuck port data_in ;
+; print_localstate[10]                    ; Stuck at GND due to stuck port data_in ;
+; prev_state.return_home                  ; Lost fanout                            ;
+; prev_state.line2                        ; Lost fanout                            ;
+; prev_state.ingame                       ; Lost fanout                            ;
+; prev_state.testing2                     ; Lost fanout                            ;
+; prev_state.endgame                      ; Lost fanout                            ;
+; prev_state.processing                   ; Lost fanout                            ;
+; prev_state.testing                      ; Lost fanout                            ;
+; prev_state.newstate                     ; Lost fanout                            ;
+; nowstate.return_home                    ; Lost fanout                            ;
+; nowstate.curstate                       ; Lost fanout                            ;
+; nowstate.line2                          ; Lost fanout                            ;
+; nowstate.ingame                         ; Lost fanout                            ;
+; nowstate.testing2                       ; Lost fanout                            ;
+; nowstate.endgame                        ; Lost fanout                            ;
+; nowstate.processing                     ; Lost fanout                            ;
+; nowstate.testing                        ; Lost fanout                            ;
+; nowstate.newstate                       ; Lost fanout                            ;
+; next_state.return_home                  ; Lost fanout                            ;
+; next_state.line2                        ; Lost fanout                            ;
+; next_state.ingame                       ; Lost fanout                            ;
+; next_state.testing2                     ; Lost fanout                            ;
+; next_state.endgame                      ; Lost fanout                            ;
+; next_state.processing                   ; Lost fanout                            ;
+; next_state.testing                      ; Lost fanout                            ;
+; next_state.newstate                     ; Lost fanout                            ;
+; state.return_home                       ; Lost fanout                            ;
+; state.curstate                          ; Lost fanout                            ;
+; state.line2                             ; Lost fanout                            ;
+; state.ingame                            ; Lost fanout                            ;
+; state.testing2                          ; Lost fanout                            ;
+; state.endgame                           ; Lost fanout                            ;
+; state.processing                        ; Lost fanout                            ;
+; state.testing                           ; Lost fanout                            ;
+; state.newstate                          ; Lost fanout                            ;
+; next_state.e_drop                       ; Merged with next_state.RIP             ;
+; next_state.hold                         ; Merged with next_state.RIP             ;
+; nowstate.e_drop                         ; Merged with nowstate.RIP               ;
+; nowstate.hold                           ; Merged with nowstate.RIP               ;
+; prev_state.e_drop                       ; Merged with prev_state.RIP             ;
+; prev_state.hold                         ; Merged with prev_state.RIP             ;
+; prev_state.print_disp                   ; Merged with prev_state.RIP             ;
+; nowstate.RIP                            ; Stuck at GND due to stuck port data_in ;
+; prev_state.RIP                          ; Stuck at GND due to stuck port data_in ;
+; next_state.RIP                          ; Stuck at GND due to stuck port data_in ;
+; memstate[10]                            ; Stuck at GND due to stuck port data_in ;
+; state_localstate[10]                    ; Stuck at GND due to stuck port data_in ;
+; Total Number of Removed Registers = 168 ;                                        ;
++-----------------------------------------+----------------------------------------+
+
+
++-------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                         ;
++----------------+---------------------------+----------------------------------------+
+; Register name  ; Reason for Removal        ; Registers Removed due to This Register ;
++----------------+---------------------------+----------------------------------------+
+; aggOP[0]       ; Stuck at GND              ; OP2[0]~reg0                            ;
+;                ; due to stuck port data_in ;                                        ;
+; aggOP[1]       ; Stuck at GND              ; OP2[1]~reg0                            ;
+;                ; due to stuck port data_in ;                                        ;
+; aggOP[2]       ; Stuck at GND              ; OP2[2]~reg0                            ;
+;                ; due to stuck port data_in ;                                        ;
+; aggOP[3]       ; Stuck at GND              ; OP2[3]~reg0                            ;
+;                ; due to stuck port data_in ;                                        ;
+; aggOP[4]       ; Stuck at GND              ; OP2[4]~reg0                            ;
+;                ; due to stuck port data_in ;                                        ;
+; aggOP[5]       ; Stuck at GND              ; OP2[5]~reg0                            ;
+;                ; due to stuck port data_in ;                                        ;
+; aggOP[6]       ; Stuck at GND              ; OP2[6]~reg0                            ;
+;                ; due to stuck port data_in ;                                        ;
+; aggOP[7]       ; Stuck at GND              ; OP2[7]~reg0                            ;
+;                ; due to stuck port data_in ;                                        ;
+; prev_state.RIP ; Stuck at GND              ; next_state.RIP                         ;
+;                ; due to stuck port data_in ;                                        ;
++----------------+---------------------------+----------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 169   ;
+; Number of registers using Synchronous Clear  ; 86    ;
+; Number of registers using Synchronous Load   ; 28    ;
+; Number of registers using Asynchronous Clear ; 2     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 54    ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++--------------------------------------------------+
+; Inverted Register Statistics                     ;
++----------------------------------------+---------+
+; Inverted Register                      ; Fan out ;
++----------------------------------------+---------+
+; SPBA                                   ; 1       ;
+; SPBD                                   ; 21      ;
+; Total number of inverted registers = 2 ;         ;
++----------------------------------------+---------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                           ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
+; 3:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; Yes        ; |build04|char_count[2]     ;
+; 13:1               ; 32 bits   ; 256 LEs       ; 32 LEs               ; 224 LEs                ; Yes        ; |build04|localstate[26]    ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 64 LEs               ; 48 LEs                 ; Yes        ; |build04|DB[5]~reg0        ;
+; 19:1               ; 2 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |build04|OP1[7]~reg0       ;
+; 19:1               ; 2 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |build04|OP1[0]~reg0       ;
+; 20:1               ; 3 bits    ; 39 LEs        ; 27 LEs               ; 12 LEs                 ; Yes        ; |build04|OP1[3]~reg0       ;
+; 3:1                ; 14 bits   ; 28 LEs        ; 28 LEs               ; 0 LEs                  ; No         ; |build04|prev_state        ;
+; 3:1                ; 12 bits   ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; No         ; |build04|nowstate          ;
+; 12:1               ; 15 bits   ; 120 LEs       ; 105 LEs              ; 15 LEs                 ; No         ; |build04|Selector660       ;
+; 13:1               ; 2 bits    ; 16 LEs        ; 14 LEs               ; 2 LEs                  ; No         ; |build04|Selector662       ;
+; 22:1               ; 15 bits   ; 210 LEs       ; 90 LEs               ; 120 LEs                ; No         ; |build04|Selector635       ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:05     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit Analysis & Synthesis
+    Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+    Info: Processing started: Sun Apr 06 20:56:54 2014
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off build_04 -c build_04
+Warning (20028): Parallel compilation is not licensed and has been disabled
+Info (12021): Found 2 design units, including 1 entities, in source file build_04.vhd
+    Info (12022): Found design unit 1: build04-behavior
+    Info (12023): Found entity 1: build04
+Info (12127): Elaborating entity "build04" for the top level hierarchy
+Warning (10036): Verilog HDL or VHDL warning at build_04.vhd(34): object "SPBB" assigned a value but never read
+Warning (10036): Verilog HDL or VHDL warning at build_04.vhd(34): object "SPBC" assigned a value but never read
+Info (13000): Registers with preset signals will power-up high
+Info (13003): DEV_CLRn pin will set, and not reset, register with preset signal due to NOT Gate Push-Back
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "RW" is stuck at GND
+    Warning (13410): Pin "BL" is stuck at VCC
+    Warning (13410): Pin "PWR" is stuck at VCC
+    Warning (13410): Pin "OP2[0]" is stuck at GND
+    Warning (13410): Pin "OP2[1]" is stuck at GND
+    Warning (13410): Pin "OP2[2]" is stuck at GND
+    Warning (13410): Pin "OP2[3]" is stuck at GND
+    Warning (13410): Pin "OP2[4]" is stuck at GND
+    Warning (13410): Pin "OP2[5]" is stuck at GND
+    Warning (13410): Pin "OP2[6]" is stuck at GND
+    Warning (13410): Pin "OP2[7]" is stuck at GND
+Info (17049): 34 registers lost all their fanouts during netlist optimizations.
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Warning (21074): Design contains 1 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "PBB"
+Info (21057): Implemented 852 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 21 input pins
+    Info (21059): Implemented 31 output pins
+    Info (21061): Implemented 800 logic cells
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 17 warnings
+    Info: Peak virtual memory: 496 megabytes
+    Info: Processing ended: Sun Apr 06 20:57:02 2014
+    Info: Elapsed time: 00:00:08
+    Info: Total CPU time (on all processors): 00:00:07
+
+

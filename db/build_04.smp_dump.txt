@@ -1,0 +1,80 @@
+
+State Machine - |build04|prev_state
+Name prev_state.newstate prev_state.testing prev_state.processing prev_state.endgame prev_state.testing2 prev_state.ingame prev_state.startscreens prev_state.infoscreens prev_state.e_drop prev_state.homescreens prev_state.hold prev_state.print_disp prev_state.line2 prev_state.curstate prev_state.RIP prev_state.return_home prev_state.initialize 
+prev_state.initialize 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+prev_state.return_home 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 
+prev_state.RIP 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 
+prev_state.curstate 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 1 
+prev_state.line2 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 
+prev_state.print_disp 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 1 
+prev_state.hold 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 1 
+prev_state.homescreens 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 1 
+prev_state.e_drop 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 1 
+prev_state.infoscreens 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 
+prev_state.startscreens 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 1 
+prev_state.ingame 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 
+prev_state.testing2 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 1 
+prev_state.endgame 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 1 
+prev_state.processing 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+prev_state.testing 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+prev_state.newstate 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+
+State Machine - |build04|nowstate
+Name nowstate.newstate nowstate.testing nowstate.processing nowstate.endgame nowstate.testing2 nowstate.ingame nowstate.startscreens nowstate.infoscreens nowstate.e_drop nowstate.homescreens nowstate.hold nowstate.print_disp nowstate.line2 nowstate.curstate nowstate.RIP nowstate.return_home nowstate.initialize 
+nowstate.initialize 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+nowstate.return_home 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 
+nowstate.RIP 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 
+nowstate.curstate 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 1 
+nowstate.line2 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 
+nowstate.print_disp 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 1 
+nowstate.hold 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 1 
+nowstate.homescreens 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 1 
+nowstate.e_drop 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 1 
+nowstate.infoscreens 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 
+nowstate.startscreens 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 1 
+nowstate.ingame 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 
+nowstate.testing2 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 1 
+nowstate.endgame 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 1 
+nowstate.processing 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+nowstate.testing 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+nowstate.newstate 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+
+State Machine - |build04|next_state
+Name next_state.newstate next_state.testing next_state.processing next_state.endgame next_state.testing2 next_state.ingame next_state.startscreens next_state.infoscreens next_state.e_drop next_state.homescreens next_state.hold next_state.print_disp next_state.line2 next_state.curstate next_state.RIP next_state.return_home next_state.initialize 
+next_state.initialize 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+next_state.return_home 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 
+next_state.RIP 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 
+next_state.curstate 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 1 
+next_state.line2 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 
+next_state.print_disp 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 1 
+next_state.hold 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 1 
+next_state.homescreens 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 1 
+next_state.e_drop 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 1 
+next_state.infoscreens 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 
+next_state.startscreens 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 1 
+next_state.ingame 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 
+next_state.testing2 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 1 
+next_state.endgame 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 1 
+next_state.processing 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+next_state.testing 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+next_state.newstate 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+
+State Machine - |build04|state
+Name state.newstate state.testing state.processing state.endgame state.testing2 state.ingame state.startscreens state.infoscreens state.e_drop state.homescreens state.hold state.print_disp state.line2 state.curstate state.RIP state.return_home state.initialize 
+state.initialize 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+state.return_home 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 
+state.RIP 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 
+state.curstate 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 1 
+state.line2 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 
+state.print_disp 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 1 
+state.hold 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 1 
+state.homescreens 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 1 
+state.e_drop 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 1 
+state.infoscreens 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 
+state.startscreens 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 1 
+state.ingame 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 
+state.testing2 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 1 
+state.endgame 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 1 
+state.processing 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+state.testing 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+state.newstate 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
